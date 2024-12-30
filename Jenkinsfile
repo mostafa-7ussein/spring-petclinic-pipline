@@ -34,11 +34,9 @@ pipeline {
                 }
             }
         }
-    
-
     }
     post {
-          success {
+        success {
             script {
                 slackSend(channel: '#flask-weather', color: '#00FF00', message: "Succeeded  ${env.JOB_NAME} - Build Number: ${env.BUILD_NUMBER} succeeded!")
             }
